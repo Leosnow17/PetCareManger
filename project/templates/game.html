@@ -1,0 +1,49 @@
+{% extends "new_base.html" %}
+
+{% block content %}
+    <div class="post-box">
+        <div class="post-border">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="product">
+                            <div class="image-post">
+                                <img src="{{ pic }}" width=640 height=360>
+                            </div>
+                            <div class="info-post">
+                                <h4 style="font-size: 20px">{{ data.name }}</h4>
+
+                                <p class="faq">Интернет-магазины</p>
+                                <ul type="square">
+                                    {% for el in shops %}
+                                    <li style="color: aqua" href="https://clck.ru/EJi2D">
+                                        <a href="{{ el }}" style="color: aliceblue; text-decoration: none">{{ el }}</a>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+
+                                <p class="faq">Торговые площадки</p>
+                                <ul type="square">
+                                    {% for el in trades %}
+                                    <li style="color: aqua" href="https://clck.ru/EJi2D">
+                                        <a href="{{ el }}" style="color: aliceblue; text-decoration: none">{{ el }}</a>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+
+                                <p class="faq">Гайды</p>
+                                <ul type="square">
+                                    {% for el in guides %}
+                                    <li style="color: aqua" href="https://clck.ru/EJi2D">
+                                        <a href="{{ el }}" style="color: aliceblue; text-decoration: none">{{ el }}</a>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

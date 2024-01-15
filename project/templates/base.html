@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style>
+
+     @font-face {
+     font-family: Dela Gothic One;
+
+    }
+
+
+    h1,h2,h3,a,button {
+        font-family: 'Dela Gothic One';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 19px;
+
+    }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+</head>
+
+<body>
+    <section class="hero is-primary is-fullheight">
+
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+                    <div id="navbarMenuHeroA" class="navbar-menu">
+                        <h1 class="navbar-item"><strong> {{current_user.name}}</strong></h1>
+
+                        <h2 class="navbar-item"> {{current_user.email}} </h2>
+                        <div class="navbar-end  ">
+                            <a href="{{ url_for('main.index') }}" class="navbar-item">
+                                Главная
+                            </a>
+                            {% if current_user.is_authenticated %}
+                            <a href="{{ url_for('main.search_teammates') }}" class="navbar-item">
+                                Поиск напарника
+                            </a>
+
+                            <a href="{{ url_for('main.profile') }}" class="navbar-item">
+                                Профиль
+                            </a>
+                            {% endif %}
+                            {% if not current_user.is_authenticated %}
+                            <a href="{{ url_for('auth.login') }}" class="navbar-item">
+                                Войти
+                            </a>
+                            <a href="{{ url_for('auth.signup') }}" class="navbar-item">
+                                Зарегистрироваться
+                            </a>
+                            {% endif %}
+                            {% if current_user.is_authenticated %}
+                            <a href="{{ url_for('auth.logout') }}" class="navbar-item">
+                                Выйти
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+
+        <div class="hero-body">
+            <div class="container has-text-centered">
+               {% block content %}
+               {% endblock %}
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="column is-4 is-offset-4">
+    <h3 class="title">Профиль</h3>
+    <br>
+        {% with messages = get_flashed_messages() %}
+{% if messages %}
+    <div class="notification is-danger">
+        {{ messages[0] }}
+    </div>
+{% endif %}
+{% endwith %}
+</div>
+<h1 class="title">
+  <div class="btn-group">
+    <div>
+        <a href="{{ url_for('main.create_post') }}" class="navbar-item">
+
+      <button class="button is-block is-info ">Создать пост на поиск напарника
+      </button>
+
+          </a>
+    </div>
+    <div>
+      <a href="{{ url_for('main.own_posts') }}" class="navbar-item">
+
+      <button class="button is-block is-info ">Мои посты
+      </button>
+      </a>
+    </div>
+
+  </div>
+</h1>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="column is-4 is-offset-4">
+    <h3 class="title">Редактирование поста</h3>
+    <div class="box">
+        {% with messages = get_flashed_messages() %}
+{% if messages %}
+    <div class="notification is-danger">
+        {{ messages[0] }}
+    </div>
+{% endif %}
+{% endwith %}
+
+
+<div class="control ">
+    <form method="POST" enctype="multipart/form-data">
+        <input type="text" class="form-control" name="title" id="title" placeholder="Заголовок поста" value="{{data.title}}"  >
+        <br><br>
+
+        <input class="form-control" name="description" id="description" placeholder="Подробное описание"  value="{{data.description}}">
+        <br><br>
+         <input type="text" class="form-control" name="tag" id="tag" placeholder="Ключевые слова"  value="{{data.tag}}">
+        <br><br>
+
+
+        <a class="button" href="/uploads/{{data.id}}">Добавьте любое изображение</a>
+
+
+
+
+
+
+            <br><br>
+            <input type=submit class="is-success is-normal">
+    </form>
+</div>
+
+    </div></div>
+ {% endblock %}

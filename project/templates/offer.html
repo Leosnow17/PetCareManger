@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="column is-4 is-offset-4">
+    <h3 class="title">Создание поста</h3>
+    <div class="box">
+        {% with messages = get_flashed_messages() %}
+{% if messages %}
+    <div class="notification is-danger">
+        {{ messages[0] }}
+    </div>
+{% endif %}
+{% endwith %}
+<div class="control ">
+
+
+    <form method="POST" action="/create-post" enctype="multipart/form-data">
+        <input type="text" class="form-control" name="title" id="title" placeholder="Заголовок поста"   >
+        <br><br>
+
+        <input class="form-control" name="description" id="description" placeholder="Подробное описание">
+        <br><br>
+         <input type="text" class="form-control" name="tag" id="tag" placeholder="Ключевые слова">
+        <div> Введите название или жанр игры </br> (если несколько, вводите через запятую)</div>
+        <br>
+        <a class="button" href="/uploads/{{data}}">Добавьте любое изображение</a>
+            <div font="Dela Gothic One"> *необязательно  </div>
+
+
+
+
+
+            <br><br>
+            <input type=submit class="is-success is-normal"></input>
+    </form>
+</div>
+        {% endblock %} </div></div>
