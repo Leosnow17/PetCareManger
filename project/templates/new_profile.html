@@ -2,7 +2,10 @@
 
 {% block content %}
 <div style="margin-top: 150px">
-<h3>Профиль</h3>
+<h2 style="display: flex;
+	flex-direction: column;
+	align-items: center;
+    color: #251002;">Профиль</h2>
 {% with messages = get_flashed_messages() %}
 {% if messages %}
     <div class="notification">
@@ -12,14 +15,14 @@
 {% endwith %}
 <div class="search-form">
     <div>
-        <a href="{{ url_for('main.create_post') }}" class="a-profile">
-            <button class="button-profile">Создать пост на поиск напарника
+        <a href="{{ url_for('main.create_pet') }}" class="a-profile">
+            <button class="button-profile">Добавить питомца
             </button>
         </a>
     </div>
     <div>
-      <a href="{{ url_for('main.own_posts') }}" class="a-profile">
-          <button class="button-profile">Мои посты
+      <a href="{{ url_for('main.own_pets') }}" class="a-profile">
+          <button class="button-profile">Мои данные
           </button>
       </a>
     </div>

@@ -4,9 +4,11 @@ from flask_login import LoginManager
 
 db = SQLAlchemy()
 
-UPLOAD_FOLDER = r'/Users/grigorijsvalev/PycharmProjects/game_agregator/project/static/images'
+UPLOAD_FOLDER_PETS = r'/Users/grigorijsvalev/PycharmProjects/game_agregator/project/static/images/pets'
+UPLOAD_FOLDER_VETS = r'/Users/grigorijsvalev/PycharmProjects/game_agregator/project/static/images/vets'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
-
+# /home/gameaggergator/game_agregator/project/static/images/pets
+# /home/gameaggergator/game_agregator/project/static/images/vets
 
 def create_app() -> Flask:
     app = Flask(__name__)
@@ -15,9 +17,8 @@ def create_app() -> Flask:
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-    app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-
-    # admin = Admin(app, name='Аукционеры', )  https://www.youtube.com/watch?v=AltoN6PX5QY (админка, пока не вижу смысла)
+    app.config['UPLOAD_FOLDER_PETS'] = UPLOAD_FOLDER_PETS
+    app.config['UPLOAD_FOLDER_VETS'] = UPLOAD_FOLDER_VETS
 
     db.init_app(app)
 

@@ -1,3 +1,4 @@
+from datetime import date
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 from flask_login import login_user, login_required, logout_user
 from sqlalchemy import null
@@ -27,7 +28,7 @@ def login_post():
         flash('Пожалуйста проверьте введенные данные и попробуйте снова')
         return redirect(url_for('auth.login'))  # Если юзера нет или пароль неверный - перезагрузка страницы
 
-    # Если проверка проходит,  значит введенные данные верны
+    # Если проверка проходит, значит введенные данные верны
     login_user(user, remember=True)
     return redirect(url_for('main.index'))
 
@@ -40,26 +41,26 @@ def signup():
 @auth.route('/signup', methods=['POST'])
 def signup_post():
     email = request.form.get('email')
-    name = request.form.get('name')
+    phone = request.form.get('phone')
     password = request.form.get('password')
-    discord = request.form.get('discord')
-    steam = request.form.get('steam')
+    name = request.form.get('name')
+    city = request.form.get('city')
 
     user = User.query.filter_by(email=email).first()  # Если это возвращает юзера, то значит маил уже есть в базе
 
     if user:  # если такой юзер уже есть, надо сделать редирект на регистрацию, чтобы пользователь мог попробовать снова
         flash('Email уже используется')
         return redirect(url_for('auth.signup'))
-    if len(email) < 1 or len(password) < 1 or len(name) < 1 :
+    if len(email) < 1 or len(password) < 1 or len(name) < 1:
         flash('Пожалуйста заполните все поля')
         return redirect(url_for('auth.signup'))
 
     new_user = User(
         email=email,
-        name=name,
+        phone=phone,
         password=generate_password_hash(password, method='sha256'),
-        discord=discord,
-        steam=steam
+        name=name,
+        city=city,
     )
 
     # добавление пользователя в базу

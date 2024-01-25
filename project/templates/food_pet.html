@@ -1,0 +1,40 @@
+{% extends "new_base.html" %}
+
+{% block content %}
+<div style="margin-top: 100px">
+<h2 style="display: flex;
+	flex-direction: column;
+	align-items: center;
+    color: #251002;">Питание</h2>
+
+<div class="site-form">
+  <form method="POST" action="/food-pet/{{data.id}}" enctype="multipart/form-data">
+    <p style="padding-left: 16px; font-size: 20px; font-weight: normal;">Тип питания:</p>
+    <div class="form-field" style="display: flex; flex-direction: column;">
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="radio" name="korm" value="1">Сухой корм</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="radio" name="korm" value="2">Влажный корм</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="radio" name="korm" value="3">Комбинированное питание</p>
+    </div>
+    <p style="padding-left: 16px; font-size: 20px; font-weight: normal;">Любимые продукты:</p>
+    <div class="form-field" style="display: flex; flex-direction: column;">
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="eda" value="1">Мясо</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="eda" value="2">Рыба</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="eda" value="3">Фрукты</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="eda" value="4">Зерно</p>
+    </div>
+    <div class="form-field" style="margin-top: -5%; margin-bottom: 5%;">
+      <input class="form-input" type="text" name="other" id="other" placeholder="Другая любимая еда">
+    </div>
+    <p style="padding-left: 16px; font-size: 20px; font-weight: normal;">Аллергены:</p>
+    <div class="form-field" style="display: flex; flex-direction: column;">
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="allerg" value="1">Курица</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="allerg" value="2">Говядина</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="allerg" value="3">Рыба</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="allerg" value="4">Молочные продукты</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="allerg" value="5">Яйца</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="allerg" value="6">Другое</p></div>
+    <button class="button-form">Дальше</button>
+  </form>
+</div>
+</div>
+{% endblock %}

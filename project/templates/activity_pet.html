@@ -1,0 +1,44 @@
+{% extends "new_base.html" %}
+
+{% block content %}
+<div style="margin-top: 100px">
+<h2 style="display: flex;
+	flex-direction: column;
+	align-items: center;
+    color: #251002;">Активность питомца</h2>
+
+<div class="site-form">
+  <form method="POST" action="/activity-pet/{{data.id}}" enctype="multipart/form-data">
+    <p style="padding-left: 16px; font-size: 20px; font-weight: normal;">Предпочитаемые виды активности:</p>
+    <div class="form-field" style="display: flex; flex-direction: column;">
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="activites" value="dp">Прогулки</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="activites" value="ud">Игры с игрушками</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="activites" value="db">Игры в помещении</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="activites" value="hf">Бег</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="activites" value="cm">Плавание</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="activites" value="ms">Агилити</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="activites" value="pl">Хайкинг</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="activites" value="ai">Трюки и обучение командам</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="activites" value="sca">Йога для животных</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="activites" value="gd">Бег рядом с велосипедом</p>
+    </div>
+    <div class="form-field">
+      <input class="form-input" type="text" name="other" id="other" placeholder="Другие активности">
+    </div>
+    <p style="padding-left: 16px; font-size: 20px; font-weight: normal;">Частота физических активностей:</p>
+    <div class="form-field" style="display: flex; flex-direction: column;">
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="radio" name="gz" value="1">Ежедневно</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="radio" name="gz" value="2">3-4 раза в неделю</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="radio" name="gz" value="3">1-2 раза в неделю</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="radio" name="gz" value="4">Реже 1 раза в неделю</p>
+    </div>
+    <p style="padding-left: 16px; font-size: 20px; font-weight: normal;">Уровень активности:</p><div class="form-field" style="display: flex; flex-direction: column;">
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="radio" name="lvl" value="l">Низкий</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="radio" name="lvl" value="m">Средний</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="radio" name="lvl" value="h">Высокий</p>
+    </div>
+    <button class="button-form">Дальше</button>
+  </form>
+</div>
+</div>
+{% endblock %}

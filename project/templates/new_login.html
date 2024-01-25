@@ -2,14 +2,11 @@
 
 {% block content %}
 <div style="margin-top: 150px">
-<h3>Вход</h3>
-{% with messages = get_flashed_messages() %}
-{% if messages %}
-    <div class="notification">
-        {{ messages[0] }}
-    </div>
-{% endif %}
-{% endwith %}
+<h2 style="display: flex;
+	flex-direction: column;
+	align-items: center;
+    color: #251002;">Вход</h2>
+
 <div class="site-form">
   <form method="POST" action="/login">
     <div class="form-field">

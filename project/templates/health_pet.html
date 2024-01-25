@@ -1,0 +1,40 @@
+{% extends "new_base.html" %}
+
+{% block content %}
+<div style="margin-top: 100px">
+<h2 style="display: flex;
+	flex-direction: column;
+	align-items: center;
+    color: #251002;">Здоровье</h2>
+
+<div class="site-form">
+  <form method="POST" action="/health-pet/{{data.id}}" enctype="multipart/form-data">
+    <p style="padding-left: 16px; font-size: 20px; font-weight: normal;">Проблемы и заболевания питомца:</p>
+    <div class="form-field" style="display: flex; flex-direction: column;">
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="problems" value="dp">Дерматологические проблемы</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="problems" value="ud">Мочекаменная болезнь</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="problems" value="db">Сахарный диабет</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="problems" value="hf">Сердечная недостаточность</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="problems" value="cm">Кардиомиопатия</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="problems" value="ms">Митральный стеноз</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="problems" value="pl">Беременность и лактация</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="problems" value="ai">Аллергии и непереносимость</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="problems" value="sca">Стрессовые состояния и адаптация</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="problems" value="gd">Заболевания десен</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="problems" value="cr">Кариес</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="problems" value="ow">Избыточный вес</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="problems" value="fa">Пищевая аллергия</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="problems" value="ind">Нарушение пищеварения</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="problems" value="ld">Заболевания печени</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="problems" value="kf">Почечная недостаточность</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="problems" value="dms">Заболевания ОДА</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="problems" value="rpi">Восстановительный период</p>
+    </div>
+    <div class="form-field">
+      <input class="form-input" type="text" name="other" id="other" placeholder="Другие проблемы">
+    </div>
+    <button class="button-form">Дальше</button>
+  </form>
+</div>
+</div>
+{% endblock %}

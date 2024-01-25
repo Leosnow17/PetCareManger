@@ -1,13 +1,12 @@
 {% extends "new_base.html" %}
 
 {% block content %}
-<h3>Мои посты</h3>
-<div>
-    <form class="search-form">
-       <p><input type="text" placeholder="Поиск по тегу" name="q" value="{{ request.args.get('q', '') }}">
-       <button type="submit" class="button-search">Найти</button></p>
-    </form>
-</div>
+<div style="margin-top: 150px">
+<h2 style="display: flex;
+	flex-direction: column;
+	align-items: center;
+    color: #251002;
+    margin-top: -9%;">Мои питомцы</h2>
 <div class="post-box">
     {% for el in data %}
     <div class="post-border">
@@ -16,10 +15,17 @@
             <div class="col-md-4">
                 <div class="product">
                     <div class="image-post">
-                        <img src="/static/images/{{el.id}}.png" width=250 height=141>
+                        <img src="/static/images/pets/{{el.id}}.png" width=257.5 height=326.5>
                     </div>
                     <div class="info-post">
-                        <h4>{{ el.title }}</h4>
+                        <a style="display: flex;
+                           text-decoration: none;
+	                       flex-direction: column;
+	                       align-items: center;
+	                       color: #251002;
+                           margin-top: 5px;
+                           margin-bottom: 5px;
+                           font-size: 20px;" href="/pet/{{el.id}}">{{ el.name }}</a>
 
                         <div class="post-bottom">
                             <a href="/change/{{el.id}}" class="info-but">Редактировать</a>

@@ -2,29 +2,43 @@
 
 {% block content %}
 <div style="margin-top: 100px">
-<h3>Редактирование поста</h3>
-{% with messages = get_flashed_messages() %}
-{% if messages %}
-    <div class="notification">
-        {{ messages[0] }}
-    </div>
-{% endif %}
-{% endwith %}
+<h2 style="display: flex;
+	flex-direction: column;
+	align-items: center;
+    color: #251002;">Редактировать</h2>
 <div class="site-form">
   <form method="POST" enctype="multipart/form-data">
     <div class="form-field">
-      <input class="form-input" type="text" name="title" id="title" placeholder="Заголовок поста" value="{{data.title}}">
+      <input class="form-input" type="text" name="name" id="name" placeholder="Кличка">
+    </div>
+    <p style="padding-left: 16px; font-size: 20px; margin-top: 15px; margin-bottom: -5px;">День рождения питомца</p>
+    <div class="form-field">
+      <input class="form-input" type="date" name="birth_date" id="birth_date">
     </div>
     <div class="form-field">
-      <input class="form-input" name="description" id="description" placeholder="Описание поста" value="{{data.description}}">
+      <input class="form-input" type="text" name="height" id="height" placeholder="Рост">
     </div>
     <div class="form-field">
-      <input class="form-input" name="tag" id="tag" placeholder="Название игры" value="{{data.tag}}">
+      <input class="form-input" type="text" name="weight" id="weight" placeholder="Вес">
+    </div>
+    <p style="padding-left: 16px; font-size: 20px;">Выберите пол питомца:</p>
+    <div class="form-field" style="display: flex; flex-direction: row;">
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="radio" name="gender" value="m">М</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 30px;" class="form-input" type="radio" name="gender" value="f">Ж</p>
+    </div>
+    <div class="form-field" style="margin-top: -10px;">
+      <input class="form-input" type="text" name="vid" id="vid" placeholder="Вид питомца(например, кошка)">
+    </div>
+    <div class="form-field">
+      <input class="form-input" type="text" name="breed" id="breed" placeholder="Порода питомца">
+    </div>
+    <div class="form-field">
+      <input class="form-input" type="text" name="hair_length" id="hair_length" placeholder="Длина шерсти(если применимо)">
     </div>
     <div>
-        <a class="button-upload" href="/uploads/{{data}}">Добавьте любое изображение</a>
+        <a class="button-upload" href="/uploads/pets/{{data}}">Сменить изображение питомца</a>
     </div>
-    <button class="button-form">Редактировать пост</button>
+    <button class="button-form">Редактировать</button>
   </form>
 </div>
 </div>

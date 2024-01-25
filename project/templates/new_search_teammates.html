@@ -1,10 +1,13 @@
 {% extends "new_base.html" %}
 
 {% block content %}
-<h3>Найдите напарника</h3>
+<h2 style="display: flex;
+	flex-direction: column;
+	align-items: center;
+    color: #251002;">Услуги</h2>
 <div>
     <form class="search-form">
-       <p><input type="text" placeholder="Поиск по тегу" name="q" value="{{ request.args.get('q', '') }}">
+       <p><input type="text" placeholder="Поиск по специалистам" name="q" value="{{ request.args.get('q', '') }}">
        <button type="submit" class="button-search">Найти</button></p>
     </form>
 </div>
@@ -15,15 +18,22 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="product">
-                    <div class="image-post">
-                        <img src="/static/images/{{el.id}}.png" width=250 height=141>
+                    <div class="image-post" style="margin-bottom: 10px; margin-top: 10px;">
+                        <img src="/static/images/vets/{{el.id}}.png" width=150 height=150>
                     </div>
                     <div class="info-post">
-                        <h4>{{ el.title }}</h4>
+                        <a style="display: flex;
+                           text-decoration: none;
+	                       flex-direction: column;
+	                       align-items: center;
+	                       color: #251002;
+                           font-size: 20px;
+                           margin-left: 5px;
+                           margin-right: 5px;" href="/services/{{el.id}}">{{ el.name }}</a>
 
                         <div class="post-bottom">
-                            <span class="post-tag">{{ el.tag }}</span>
-                            <a href="/info/{{el.id}}" class="info-but">Подробней</a>
+                            <span class="post-tag" style="margin-right: 5px;">{{ el.tag }}</span>
+                            <a href="/services/{{el.id}}" class="info-but">Подробней</a>
                         </div>
                     </div>
                 </div>

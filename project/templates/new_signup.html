@@ -2,30 +2,27 @@
 
 {% block content %}
 <div style="margin-top: 100px">
-<h3>Регистрация</h3>
-{% with messages = get_flashed_messages() %}
-{% if messages %}
-    <div class="notification">
-        {{ messages[0] }}. Go to <a href="{{ url_for('auth.login') }}">login page</a>.
-    </div>
-{% endif %}
-{% endwith %}
+<h2 style="display: flex;
+	flex-direction: column;
+	align-items: center;
+    color: #251002;">Регистрация</h2>
+
 <div class="site-form">
   <form method="POST" action="/signup">
     <div class="form-field">
       <input class="form-input" type="email" name="email" placeholder="Email">
     </div>
     <div class="form-field">
-      <input class="form-input" type="text" name="name" placeholder="Имя">
-    </div>
-    <div class="form-field">
-      <input class="form-input" type="text" name="discord" placeholder="Discord">
-    </div>
-    <div class="form-field">
-      <input class="form-input" type="text" name="steam" placeholder="Steam">
+      <input class="form-input" type="text" name="phone" placeholder="Номер телефона">
     </div>
     <div class="form-field">
       <input class="form-input" type="password" name="password" placeholder="Пароль">
+    </div>
+    <div class="form-field">
+      <input class="form-input" type="text" name="name" placeholder="Имя">
+    </div>
+    <div class="form-field">
+      <input class="form-input" type="text" name="city" placeholder="Город">
     </div>
     <button class="button-form">Создать аккаунт</button>
   </form>

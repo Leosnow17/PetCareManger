@@ -11,14 +11,7 @@
                                 <img src="{{ pic }}" width=640 height=360>
                             </div>
                             <div class="info-post" style="">
-                                <h4 style="font-size: 20px">{{ data.title }}</h4>
-
-                                <div style="color: #41B7FB"> Описание: {{ data.description }}</div>
-
-                                <h1 style="color: #41B7FB; font-size: 16px"> Понравился пост: {{ data.responded_user }}</h1>
-                                <form method="POST" action="/info/{{data.id}}">
-                                    <input action="/info/{{data.id}}" value="Откликнуться" type=submit class="button-form">
-                                </form>
+                                <h4 style="font-size: 20px">{{ data.name }}</h4>
                             </div>
                         </div>
                     </div>

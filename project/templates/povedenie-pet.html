@@ -1,0 +1,61 @@
+{% extends "new_base.html" %}
+
+{% block content %}
+<div style="margin-top: 100px">
+<h2 style="display: flex;
+	flex-direction: column;
+	align-items: center;
+    color: #251002;">Особенности характера и поведения</h2>
+
+<div class="site-form">
+  <form method="POST" action="/povedenie-pet/{{data.id}}" enctype="multipart/form-data">
+    <p style="padding-left: 16px; font-size: 20px; font-weight: normal;">Социализация</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="soc" value="1">Любит общество других животных</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="soc" value="2">Стесняется в присутствии других животных</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="soc" value="3">Предпочитает взаимодействовать с людьми</p>
+    <p style="padding-left: 16px; font-size: 20px; font-weight: normal;">Территориальность</p>
+    <div class="form-field" style="display: flex; flex-direction: column;">
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="ter" value="1">Выраженное чувство территориальности</p>
+    </div>
+    <p style="padding-left: 16px; font-size: 20px; font-weight: normal;">Независимость</p>
+    <div class="form-field" style="display: flex; flex-direction: column;">
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="nez" value="1">Независимый характер, предпочитает одиночество</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="nez" value="2">Зависимость от владельца</p>
+    </div>
+    <p style="padding-left: 16px; font-size: 20px; font-weight: normal;">Реакция на стрессовые ситуации</p>
+    <div class="form-field" style="display: flex; flex-direction: column;">
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="reac" value="1">Скрытие или уход в укрытие</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="reac" value="2">Агрессивное поведение</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="reac" value="3">Проявление апатии</p>
+    </div>
+    <p style="padding-left: 16px; font-size: 20px; font-weight: normal;">Привычки</p>
+    <div class="form-field" style="display: flex; flex-direction: column;">
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="priv" value="1">Отсутствие ярко выраженных привычек</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="priv" value="2">Особые привычки</p>
+    </div>
+    <p style="padding-left: 16px; font-size: 20px; font-weight: normal;">Агрессивность</p>
+    <div class="form-field" style="display: flex; flex-direction: column;">
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="agr" value="1">Агрессивность к другим животным</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="agr" value="2">Агрессивность к людям</p>
+    </div>
+    <p style="padding-left: 16px; font-size: 20px; font-weight: normal;">Любовь к играм</p>
+    <div class="form-field" style="display: flex; flex-direction: column;">
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="lovg" value="1">Любит играть с игрушками</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="lovg" value="2">Предпочитает активные игры</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="lovg" value="3">Предпочитает спокойные игры</p>
+    </div>
+    <p style="padding-left: 16px; font-size: 20px; font-weight: normal;">Стрессоустойчивость</p>
+    <div class="form-field" style="display: flex; flex-direction: column;">
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="stres" value="1">Легко поддается стрессу</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="stres" value="2">Стрессоустойчивый</p>
+    </div>
+    <p style="padding-left: 16px; font-size: 20px; font-weight: normal;">Любовь к обучению</p>
+    <div class="form-field" style="display: flex; flex-direction: column;">
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="lovedu" value="1">Легкость в обучении новым командам</p>
+      <p style="margin-top: -5%; font-size: 20px;"><input style="width: 20px; height: 20px; margin-left: 8px;" class="form-input" type="checkbox" name="lovedu" value="2">Обучение дается не легко</p>
+    </div>
+    <button class="button-form">Сохранить</button>
+  </form>
+</div>
+</div>
+{% endblock %}
